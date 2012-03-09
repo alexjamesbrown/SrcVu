@@ -3,6 +3,13 @@ var http = require('http'),
 
 var server = http.createServer(function (req, resp) {
 	
+	// control for favicon
+	  if (q.url === '/favicon.ico') {
+	    r.writeHead(200, {'Content-Type': 'image/x-icon'} );
+	    r.end();
+	    return;
+	  }
+	
 	var url = req.url.slice(1);
 
 	request(url, function (error, response, body) {
