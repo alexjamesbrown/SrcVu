@@ -11,7 +11,12 @@ var server = http.createServer(function (req, resp) {
 	    r.end();
 	    return;
 	  }
-	
+
+	//ensure url starts with http:// (or we get an invalid protocol exception from request)
+	if (url.substring(0, 7) != "http://") {
+	    url="http://"+url;
+	}
+		
 	request(url, function (error, response, body) {
 		if (!error && response.statusCode == 200) {
 			resp.writeHeader(200, {"Content-Type": "text/plain"}); 
@@ -22,5 +27,5 @@ var server = http.createServer(function (req, resp) {
 });
 
 var port = process.env.PORT || 8080;
-
+//console.log(port);
 server.listen(port);
