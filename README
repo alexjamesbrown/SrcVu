@@ -1,0 +1,5 @@
+SrcView is a small node.js app I'm developing to enable me to view the source of web pages
+
+## Intended Usage
+The endpoint is a URL, in the form of:
+<app>/<url-to-site-to-view-source>
