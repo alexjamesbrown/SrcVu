@@ -7,8 +7,8 @@ var server = http.createServer(function (req, resp) {
 	
 	// control for favicon
 	  if (url === 'favicon.ico') {
-	    r.writeHead(200, {'Content-Type': 'image/x-icon'} );
-	    r.end();
+	    resp.writeHead(200, {'Content-Type': 'image/x-icon'} );
+	    resp.end();
 	    return;
 	  }
 
