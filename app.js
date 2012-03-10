@@ -1,17 +1,19 @@
-var request = require('request');
+var request = require('request'),
+	express = require('express');
 
-var app = require('express').createServer();
+var app = express.createServer(
+	express.favicon()
+);
 
 app.get('/', function(req, resp){
+	resp.writeHeader(200, {"Content-Type": "text/plain"}); 
+	resp.write("no url set");
+	resp.end();
+});
+
+app.get('/:url', function(req, resp){
 	
-	var url = req.url.slice(1);
-	
-	// control for favicon
-	  if (url === 'favicon.ico') {
-	    resp.writeHead(200, {'Content-Type': 'image/x-icon'} );
-	    resp.end();
-	    return;
-	  }
+	var url = req.params.url;
 
 	//ensure url starts with http:// (or we get an invalid protocol exception from request)
 	if (url.substring(0, 7) != "http://") {
