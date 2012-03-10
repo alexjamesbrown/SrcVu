@@ -1,7 +1,8 @@
-var http = require('http'),
-	request = require('request');
+var request = require('request');
 
-var server = http.createServer(function (req, resp) {
+var app = require('express').createServer();
+
+app.get('/', function(req, resp){
 	
 	var url = req.url.slice(1);
 	
@@ -28,4 +29,4 @@ var server = http.createServer(function (req, resp) {
 
 var port = process.env.PORT || 8080;
 //console.log(port);
-server.listen(port);
+app.listen(port);
