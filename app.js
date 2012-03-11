@@ -24,7 +24,8 @@ app.get('/:url', function(req, resp){
 });
 
 app.post('/', function(req, resp){
-	getSource(req.param('url', null), resp);
+	resp.redirect('/' + req.param('url', null));
+	//getSource(req.param('url', null), resp);
 });
 
 function getSource(url, resp)
