@@ -2,11 +2,12 @@ doctype 5
 html(lang="en")
   head
     title= pageTitle
-    link(href="scripts/prettify/prettify.css", media="screen", rel="stylesheet", type="text/css")
+    link(href="styles/prettify.css", media="screen", rel="stylesheet", type="text/css")
+    link(href="styles/style.css", media="screen", rel="stylesheet", type="text/css")
   body.
     <pre class="prettyprint lang-html">
         #{content}
     </pre>
-  script(src='scripts/prettify/prettify.js')  
+  script(src='scripts/prettify.js')  
   script(type='text/javascript')
     prettyPrint();
