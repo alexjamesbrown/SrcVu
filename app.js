@@ -13,8 +13,6 @@ app.configure(function(){
 }
 );
 
-app.listen(port);
-
 // Routes
 app.get('/', function(req, resp){
 	resp.render('index.jade', {pageTitle: 'Some title'});
