@@ -5,7 +5,8 @@ var request = require('request'),
 	port = process.env.PORT || 5000;
 
 app.configure(function(){
-	app.set("view options", { layout: false, pretty: true });
+	app.set('view options', { layout: false, pretty: true });
+	app.set('view engine', 'ejs')
 	app.use(express.bodyParser());
 	app.use(express.favicon());
 	app.use(express.static(__dirname + '/public'));
@@ -13,7 +14,7 @@ app.configure(function(){
 
 // Routes
 app.get('/', function(req, resp){
-	resp.render('index.jade');
+	resp.render('index.ejs');
 });
 
 app.get('/:url', function(req, resp){
