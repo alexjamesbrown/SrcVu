@@ -9,7 +9,7 @@ module.exports = function(url, res)
 
 	request(url, function (error, response, body) {
 		if (error) {
-			res.render('error.jade', {pageTitle: 'ERROR'});
+			res.render('error.ejs', {error: error});
 		}
 		if (!error && response.statusCode == 200) {			
 			res.render('src.jade', {pageTitle: 'Source of: '+url, content: body})
