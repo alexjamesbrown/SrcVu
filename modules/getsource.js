@@ -12,7 +12,7 @@ module.exports = function(url, res)
 			res.render('error.ejs', {error: error});
 		}
 		if (!error && response.statusCode == 200) {			
-			res.render('src.jade', {pageTitle: 'Source of: '+url, content: body})
+			res.render('src.ejs', {pageTitle: 'Source of: '+url, content: body})
 		}
 	})	
 }
