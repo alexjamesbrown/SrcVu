@@ -18,8 +18,7 @@ app.get('/', function(req, resp) {
     resp.render('index.ejs');
 });
 
-app.get('/:url', function(req, res) {
-
+app.get('/:url*', function(req, res) {
     var url = req.param('url');
 
     //ensure url starts with http:// (or we get an invalid protocol exception from request)
@@ -28,9 +27,16 @@ app.get('/:url', function(req, res) {
     }
 
     request(url, function(err, response, body) {
+
         if (err) {
             return res.render('error.ejs', {
-                error: error
+                error: err
+            });
+        }
+
+        if (!response) {
+            return res.render('error.ejs', {
+                error: 'Not Found'
             });
         }
 
