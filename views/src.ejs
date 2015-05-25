@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<link href="styles/bootstrap.css" rel="stylesheet">
+		<link href="styles/style.css" rel="stylesheet">
+
 		<title>Source of: <%=url%></title>
 		<link href="styles/prettify.css" media="screen" rel="stylesheet" type="text/css">
 	</head>
+	<a href="/" class="btn btn-default"> < Back</a>
 	<body>
-		<pre class="prettyprint lang-html">
-			<%=content%>
-		</pre>
+		<div class="col-xs-12">
+			<pre class="prettyprint lang-html">
+				<%=content%>
+			</pre>
+		</div>
 	</body>
 	<script type="text/javascript" src="scripts/prettify.js"></script>
 	<script type="text/javascript">prettyPrint();</script>
