@@ -3,7 +3,7 @@
 	"author": "Alex Brown <alex@alexjamesbrown.com>",
 	"version": "0.0.1",
 	"dependencies": {
-		"request": "2.9.x",
+		"request": "2.88.x",
 		"express": "2.5.x",
 		"ejs": "0.8.x"
 	}	, "engines": {
